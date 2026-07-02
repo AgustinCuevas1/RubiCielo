@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RubiCielo | Productos Artesanales</title>
+    <title>RubiCielo - Productos Artesanales y Manualidades</title>
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="products.css" />
     <link rel="icon" href="../favicon.png" type="image/png" />
@@ -11,11 +11,22 @@
   <body>
     <header>
       <div class="img__header">
-          <h1>RubiCielo</h1>
+          <h1><a href="../index.html" class="h1">RubiCielo</a></h1>
       </div>
       <nav class="header__nav">
         <ul class="header__nav-ul">
-          <li class="header__nav-li"><a href="../index.html" class="header__nav-a" title="Inicio">Volver al Inicio</a></li>
+          <li class="header__nav-li li-inicio"><a href="../index.html" class="header__nav-a" title="volver">Volver al Inicio</a></li>
+          <li class="header__nav-li">
+            <div class="contenedor__carrito">
+              <a><svg class="carrito" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="aliceblue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+          <path d="M15 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+          <path d="M17 17h-11v-14h-2" />
+          <path d="M6 5l14 1l-1 7h-13" />
+        </svg></a><span id="count-carrito">0</span>
+            </div>
+            </li>
         </ul>
       </nav>
       <div>
@@ -23,15 +34,32 @@
         <a href="#check" class="btn-navmenu">=</a>
       </div>
     </header>
-    <main class="products-page-main">
-      <a href="https://wa.me/549498400377" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-        <div class="icon-whatsapp">
-          <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
-            <path d="M16.002 0c-8.837 0-16.002 7.165-16.002 16.002 0 2.825 0.742 5.578 2.158 8.016l-2.158 7.98 8.161-2.141c2.392 1.309 5.097 2.003 7.842 2.003 8.837 0 16.002-7.165 16.002-16.002s-7.165-16.002-16.002-16.002zM16.002 29.31c-2.438 0-4.836-0.655-6.936-1.902l-0.496-0.295-5.158 1.353 1.375-5.031-0.323-0.515c-1.369-2.18-2.094-4.704-2.094-7.228 0-7.424 6.040-13.464 13.464-13.464s13.464 6.040 13.464 13.464-6.040 13.464-13.464 13.464zM21.579 19.349c-0.306-0.153-1.808-0.893-2.088-0.995-0.28-0.103-0.485-0.153-0.689 0.153-0.204 0.306-0.791 0.995-0.97 1.199-0.179 0.204-0.357 0.229-0.663 0.076-0.306-0.153-1.291-0.476-2.459-1.517-0.908-0.81-1.52-1.812-1.698-2.118-0.179-0.306-0.019-0.472 0.134-0.624 0.138-0.138 0.306-0.357 0.459-0.536 0.153-0.179 0.204-0.306 0.306-0.51 0.103-0.204 0.051-0.383-0.026-0.536-0.076-0.153-0.689-1.658-0.943-2.271-0.248-0.597-0.499-0.516-0.689-0.526-0.179-0.009-0.383-0.012-0.587-0.012-0.204 0-0.536 0.076-0.816 0.383-0.28 0.306-1.071 1.046-1.071 2.551 0 1.505 1.097 2.959 1.25 3.163 0.153 0.204 2.158 3.295 5.23 4.542 0.731 0.297 1.301 0.474 1.745 0.608 0.733 0.233 1.4 0.2 1.928 0.121 0.594-0.089 1.808-0.74 2.063-1.454 0.255-0.714 0.255-1.326 0.179-1.454-0.076-0.128-0.28-0.204-0.587-0.357z"></path>
-          </svg>
+
+    <div class="cart-popup" id="cartPopup" aria-hidden="true">
+      <div class="cart-popup__backdrop" id="cartBackdrop"></div>
+      <aside class="cart-popup__content" role="dialog" aria-labelledby="cartTitle">
+        <div class="cart-popup__header">
+          <h2 id="cartTitle">Carro de Compra</h2>
+          <button type="button" class="cart-popup__close" id="closeCart" aria-label="Cerrar carrito">×</button>
         </div>
-        <span class="text-whatsapp">+54 9 3498 40-0377</span>
-      </a>
+        <div class="cart-popup__body">
+          <div class="cart-popup__items" id="cartItems">
+            <p class="cart-popup__empty">El carrito está vacío. Agregá productos para ver tu presupuesto.</p>
+          </div>
+        </div>
+        <div class="cart-popup__footer">
+          <div class="cart-popup__total">
+            <span>Total</span>
+            <strong id="cartTotal">$0</strong>
+          </div>
+          <a href="https://wa.me/549498400377" class="btn-whatsapp btn-whatsapp--cart" id="cartWhatsapp" target="_blank" rel="noopener noreferrer">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </aside>
+    </div>
+
+    <main class="products-page-main">
       <section class="products-hero">
         <div class="products-hero__content">
           <p class="products-hero__eyebrow">Catálogo artesanal</p>
@@ -63,7 +91,7 @@
         <p id="resultsCounter" class="results-counter">Mostrando 8 productos</p>
       </section>
 
-      <section class="products-grid" aria-label="Productos destacados">
+      <section class="products-grid" aria-label="Productos destacados" id="contenedor-productos">
         <article class="product-card" data-name="Collar Flora" data-line="flora" data-description="collar floral femenino elegante">
           <div class="product-card__image image-flora"></div>
           <div class="product-card__content">
@@ -72,7 +100,7 @@
             <p>Collar delicado con nudos artesanales y detalles florales.</p>
             <div class="product-card__meta">
               <span>$8.500</span>
-              <a href="https://wa.me/549498400377" target="_blank" rel="noopener noreferrer">Consultar</a>
+              <button class="btn-add-carrito">Añadir al Carrito</button>
             </div>
           </div>
         </article>
@@ -85,7 +113,7 @@
             <p>Diseño fuerte y minimalista para un estilo contemporáneo.</p>
             <div class="product-card__meta">
               <span>$6.200</span>
-              <a href="https://wa.me/549498400377" target="_blank" rel="noopener noreferrer">Consultar</a>
+                <button class="btn-add-carrito">Añadir al Carrito</button>
             </div>
           </div>
         </article>
@@ -98,7 +126,7 @@
             <p>Una pieza original, hecha a mano y pensada para combinar.</p>
             <div class="product-card__meta">
               <span>$5.800</span>
-              <a href="https://wa.me/549498400377" target="_blank" rel="noopener noreferrer">Consultar</a>
+              <button class="btn-add-carrito">Añadir al Carrito</button>
             </div>
           </div>
         </article>
@@ -111,7 +139,7 @@
             <p>Charm delicado para personalizar y renovar tus looks.</p>
             <div class="product-card__meta">
               <span>$3.900</span>
-              <a href="https://wa.me/549498400377" target="_blank" rel="noopener noreferrer">Consultar</a>
+              <button class="btn-add-carrito">Añadir al Carrito</button>
             </div>
           </div>
         </article>
@@ -124,7 +152,7 @@
             <p>Un accesorio con presencia, detalle y terminaciones impecables.</p>
             <div class="product-card__meta">
               <span>$7.100</span>
-              <a href="https://wa.me/549498400377" target="_blank" rel="noopener noreferrer">Consultar</a>
+              <button class="btn-add-carrito">Añadir al Carrito</button>
             </div>
           </div>
         </article>
@@ -137,7 +165,7 @@
             <p>Decoración artesanal para darle calidez a tus espacios.</p>
             <div class="product-card__meta">
               <span>$10.500</span>
-              <a href="https://wa.me/549498400377" target="_blank" rel="noopener noreferrer">Consultar</a>
+              <button class="btn-add-carrito">Añadir al Carrito</button>
             </div>
           </div>
         </article>
@@ -150,7 +178,7 @@
             <p>Una pieza fresca, romántica y hecha con mucha dedicación.</p>
             <div class="product-card__meta">
               <span>$4.700</span>
-              <a href="https://wa.me/549498400377" target="_blank" rel="noopener noreferrer">Consultar</a>
+              <button class="btn-add-carrito">Añadir al Carrito</button>
             </div>
           </div>
         </article>
@@ -163,7 +191,7 @@
             <p>Ideal para quienes aman accesorios delicados y únicos.</p>
             <div class="product-card__meta">
               <span>$6.800</span>
-              <a href="https://wa.me/549498400377" target="_blank" rel="noopener noreferrer">Consultar</a>
+              <button class="btn-add-carrito">Añadir al Carrito</button>
             </div>
           </div>
         </article>
@@ -188,38 +216,9 @@
             <path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917" />
         </svg></a>
         </div>
-      <p>Copyright RubiCielo © - Todos los derechos reservados</p>
+      <p>RubiCielo 2026 © - Todos los derechos reservados</p>
     </footer>
 
-    <script>
-      const searchInput = document.getElementById('searchInput');
-      const lineFilter = document.getElementById('lineFilter');
-      const cards = Array.from(document.querySelectorAll('.product-card'));
-      const resultsCounter = document.getElementById('resultsCounter');
-
-      function updateProducts() {
-        const query = searchInput.value.trim().toLowerCase();
-        const selectedLine = lineFilter.value.toLowerCase();
-        let visibleCount = 0;
-
-        cards.forEach((card) => {
-          const name = card.dataset.name.toLowerCase();
-          const line = card.dataset.line.toLowerCase();
-          const description = card.dataset.description.toLowerCase();
-          const matchesQuery = name.includes(query) || description.includes(query);
-          const matchesLine = selectedLine === 'todas' || line === selectedLine;
-          const isVisible = matchesQuery && matchesLine;
-
-          card.style.display = isVisible ? 'flex' : 'none';
-          if (isVisible) visibleCount += 1;
-        });
-
-        resultsCounter.textContent = `Mostrando ${visibleCount} productos`;
-      }
-
-      searchInput.addEventListener('input', updateProducts);
-      lineFilter.addEventListener('change', updateProducts);
-      updateProducts();
-    </script>
+    <script src="./products.js"></script>
   </body>
 </html>
