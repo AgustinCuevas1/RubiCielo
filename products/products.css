@@ -40,27 +40,31 @@ margin: 0 5rem;
 }
 
 .carrito {
-  display: block;
-  cursor: pointer;
+  display: none;
 }
 .contenedor__carrito {
-  width: 40px;
-  position: relative;
-
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: 2px solid #7a2f6f;
+  background: #7a2f6f;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
 }
-.contenedor__carrito:hover{
-    opacity: 0.7;
+.contenedor__carrito:hover {
+  opacity: 0.85;
 }
 
 #count-carrito {
-  font-size: .5;
-  font-family: 'Times New Roman', Times, serif;
-  cursor: pointer;
-  background-color: transparent;
-  color: aliceblue;
-  position: absolute;
-  top: 0;
-  right: 0;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+  color: white;
+  position: static;
 }
 
 .cart-popup {
@@ -301,6 +305,7 @@ padding: 0rem 5rem;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .product-card:hover {
@@ -540,6 +545,7 @@ padding: 0rem 1rem;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .product-card:hover {

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RubiCielo - Pulsera Kairos</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../product.css" />
+    <link rel="stylesheet" href="../product.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="../../favicon.png" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <div class="img__header">
+        <h1><a href="../../index.html" class="h1">RubiCielo</a></h1>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav-ul">
+          <li class="header__nav-li li-inicio"><a href="../../index.html" class="header__nav-a" title="Inicio">Inicio</a></li>
+          <li class="header__nav-li"><a href="../../products/index.html" class="header__nav-a" title="Productos">Productos</a></li>
+        </ul>
+        <button type="button" class="contenedor__carrito" aria-label="Ver carrito">🛒<span id="count-carrito">0</span></button>
+      </nav>
+    </header>
+
+    <main class="product-detail-main" data-product-name="Pulsera Kairos" data-product-price="6200">
+      <section class="product-detail-hero">
+        <div class="product-detail-hero__content">
+          <p class="product-detail-hero__line">Línea Kairos</p>
+          <h1>Pulsera Kairos</h1>
+          <p class="product-detail-hero__price">Precio aproximado: $6.200</p>
+          <p>Diseño fuerte y minimalista para un estilo contemporáneo.</p>
+          <div class="product-detail-actions">
+            <a href="../../products/index.html" class="btn__secondary">Volver a Productos</a>
+            <button type="button" id="addToCartButton" class="btn__main">Agregar al carrito</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-detail-info">
+        <div class="product-detail-card">
+          <div class="product-detail-card__image"></div>
+          <div class="product-detail-card__copy">
+            <h2>Descripción</h2>
+            <p>Diseño fuerte y minimalista para un estilo contemporáneo.</p>
+            <ul>
+              <li>Material: Hilo y detalles artesanales</li>
+              <li>Hecho a mano en Argentina</li>
+              <li>Disponible para pedido personalizado</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="cart-popup" id="cartPopup" aria-hidden="true">
+      <div class="cart-popup__backdrop" id="cartBackdrop" tabindex="-1"></div>
+      <div class="cart-popup__content" role="dialog" aria-modal="true">
+        <div class="cart-popup__header">
+          <h2>Carrito</h2>
+          <button class="cart-popup__close" id="closeCart" aria-label="Cerrar carrito">×</button>
+        </div>
+        <div class="cart-popup__body">
+          <div class="cart-popup__items" id="cartItems"></div>
+        </div>
+        <div class="cart-popup__footer">
+          <div class="cart-popup__total">
+            <span>Total</span>
+            <strong id="cartTotal">$0</strong>
+          </div>
+          <a class="btn-whatsapp--cart" id="cartWhatsapp" href="https://wa.me/549498400377" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>RubiCielo 2026 © - Todos los derechos reservados</p>
+    </footer>
+    <script src="../cart.js" defer></script>
+  </body>
+</html>

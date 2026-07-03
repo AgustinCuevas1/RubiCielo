@@ -17,15 +17,7 @@
         <ul class="header__nav-ul">
           <li class="header__nav-li li-inicio"><a href="../index.html" class="header__nav-a" title="volver">Volver al Inicio</a></li>
           <li class="header__nav-li">
-            <div class="contenedor__carrito">
-              <a><svg class="carrito" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="aliceblue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-          <path d="M15 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-          <path d="M17 17h-11v-14h-2" />
-          <path d="M6 5l14 1l-1 7h-13" />
-        </svg></a><span id="count-carrito">0</span>
-            </div>
+              <button type="button" class="contenedor__carrito" aria-label="Ver carrito">🛒<span id="count-carrito">0</span></button>
             </li>
         </ul>
       </nav>
@@ -37,9 +29,9 @@
 
     <div class="cart-popup" id="cartPopup" aria-hidden="true">
       <div class="cart-popup__backdrop" id="cartBackdrop"></div>
-      <aside class="cart-popup__content" role="dialog" aria-labelledby="cartTitle">
+      <div class="cart-popup__content" role="dialog" aria-modal="true">
         <div class="cart-popup__header">
-          <h2 id="cartTitle">Carro de Compra</h2>
+          <h2>Carro de Compra</h2>
           <button type="button" class="cart-popup__close" id="closeCart" aria-label="Cerrar carrito">×</button>
         </div>
         <div class="cart-popup__body">
@@ -56,7 +48,7 @@
             Consultar por WhatsApp
           </a>
         </div>
-      </aside>
+      </div>
     </div>
 
     <main class="products-page-main">
@@ -92,7 +84,7 @@
       </section>
 
       <section class="products-grid" aria-label="Productos destacados" id="contenedor-productos">
-        <article class="product-card" data-name="Collar Flora" data-line="flora" data-description="collar floral femenino elegante">
+        <article class="product-card" data-name="Collar Flora" data-line="flora" data-description="collar floral femenino elegante" data-link="../all-products/collar-flora/index.html">
           <div class="product-card__image image-flora"></div>
           <div class="product-card__content">
             <span class="product-card__line">Línea Flora</span>
@@ -105,7 +97,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-name="Pulsera Kairos" data-line="kairos" data-description="pulsera masculina elegante robusta">
+        <article class="product-card" data-name="Pulsera Kairos" data-line="kairos" data-description="pulsera masculina elegante robusta" data-link="../all-products/pulsera-kairos/index.html">
           <div class="product-card__image image-kairos"></div>
           <div class="product-card__content">
             <span class="product-card__line">Línea Kairos</span>
@@ -118,7 +110,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-name="Pulsera Diseño" data-line="diseño" data-description="pulsera de diseño personalizada colores">
+        <article class="product-card" data-name="Pulsera Diseño" data-line="diseño" data-description="pulsera de diseño personalizada colores" data-link="../all-products/pulsera-diseno/index.html">
           <div class="product-card__image image-design"></div>
           <div class="product-card__content">
             <span class="product-card__line">Pulseras de Diseño</span>
@@ -131,7 +123,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-name="Charm Luna" data-line="charm" data-description="charm dije artesanal femenino">
+        <article class="product-card" data-name="Charm Luna" data-line="charm" data-description="charm dije artesanal femenino" data-link="../all-products/charm-luna/index.html">
           <div class="product-card__image image-charm"></div>
           <div class="product-card__content">
             <span class="product-card__line">Charm</span>
@@ -144,7 +136,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-name="Anillo Gloria" data-line="gloria" data-description="anillo artesanal elegante gloria argentina">
+        <article class="product-card" data-name="Anillo Gloria" data-line="gloria" data-description="anillo artesanal elegante gloria argentina" data-link="../all-products/anillo-gloria/index.html">
           <div class="product-card__image image-gloria"></div>
           <div class="product-card__content">
             <span class="product-card__line">Gloria Argentina</span>
@@ -157,7 +149,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-name="Conjunto RubyHome" data-line="rubyhome" data-description="conjunto decorativo para hogar rubyhome">
+        <article class="product-card" data-name="Conjunto RubyHome" data-line="rubyhome" data-description="conjunto decorativo para hogar rubyhome" data-link="../all-products/conjunto-rubyhome/index.html">
           <div class="product-card__image image-rubyhome"></div>
           <div class="product-card__content">
             <span class="product-card__line">RubyHome</span>
@@ -170,7 +162,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-name="Pulsera Flora" data-line="flora" data-description="pulsera floral femenina artesanal">
+        <article class="product-card" data-name="Pulsera Flora" data-line="flora" data-description="pulsera floral femenina artesanal" data-link="../all-products/pulsera-flora/index.html">
           <div class="product-card__image image-flora-two"></div>
           <div class="product-card__content">
             <span class="product-card__line">Línea Flora</span>
@@ -183,7 +175,7 @@
           </div>
         </article>
 
-        <article class="product-card" data-name="Collar Charm" data-line="charm" data-description="collar charm con dije artesanal">
+        <article class="product-card" data-name="Collar Charm" data-line="charm" data-description="collar charm con dije artesanal" data-link="../all-products/collar-charm/index.html">
           <div class="product-card__image image-charm-two"></div>
           <div class="product-card__content">
             <span class="product-card__line">Charm</span>

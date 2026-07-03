@@ -54,7 +54,24 @@
       const closeCart = document.getElementById('closeCart');
       const cartWhatsapp = document.getElementById('cartWhatsapp');
 
-      const cart = [];
+      const CART_STORAGE_KEY = 'rubicielo_cart';
+
+      function loadCart() {
+        const raw = localStorage.getItem(CART_STORAGE_KEY);
+        if (!raw) return [];
+        try {
+          const parsed = JSON.parse(raw);
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function saveCart(cart) {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+      }
+
+      const cart = loadCart();
 
       function parsePrice(priceText) {
         const cleanText = priceText.replace(/[^\d.,]/g, '');
@@ -125,6 +142,7 @@
           cart.push({ ...product, quantity: 1 });
         }
 
+        saveCart(cart);
         calculateCartSummary();
         renderCartItems();
       }
@@ -133,6 +151,7 @@
         const itemIndex = cart.findIndex((item) => item.name === productName);
         if (itemIndex === -1) return;
         cart.splice(itemIndex, 1);
+        saveCart(cart);
         calculateCartSummary();
         renderCartItems();
       }
@@ -168,12 +187,22 @@
 
       document.querySelectorAll('.btn-add-carrito').forEach((button) => {
         button.addEventListener('click', (event) => {
+          event.stopPropagation();
           const card = event.target.closest('.product-card');
           if (!card) return;
           const name = card.dataset.name;
           const priceText = card.querySelector('.product-card__meta span').textContent;
           const price = parsePrice(priceText);
           addToCart({ name, price });
+        });
+      });
+
+      document.querySelectorAll('.product-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          const productLink = card.dataset.link;
+          if (productLink) {
+            window.location.href = productLink;
+          }
         });
       });
 
