@@ -8,7 +8,7 @@
 }
 
 body {
-  background: var(--cream);
+  background-color: aliceblue;
   color: var(--text-dark);
   overflow-x: hidden;
 }
@@ -48,22 +48,22 @@ margin: 0 5rem;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
   border-radius: 999px;
-  border: 2px solid #7a2f6f;
-  background: #7a2f6f;
+  border: 2px solid aliceblue;
+  background: transparent;
   color: white;
   font-weight: 700;
   cursor: pointer;
 }
 .contenedor__carrito:hover {
-  opacity: 0.85;
+  opacity: 0.5;
 }
 
 #count-carrito {
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.18);
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.01);
   border-radius: 999px;
   padding: 0.1rem 0.45rem;
-  color: white;
+  color: aliceblue;
   position: static;
 }
 
@@ -443,7 +443,7 @@ margin: 0 0.5rem;
   font-size: .5;
   font-family: 'Times New Roman', Times, serif;
   cursor: pointer;
-  background-color: transparent;
+  background-color: black;
   color: aliceblue;
   position: absolute;
   top: 0;
