@@ -402,13 +402,18 @@ padding: 0rem 5rem;
 
 @media screen and (max-width: 768px) {
 
+  .btn-navmenu {
+    display: none;
+  } 
+
   header {
-    justify-content: space-evenly;
+    position: fixed;
+    justify-content: space-between;
     justify-items: center;
     align-items: center;
     align-content: center;
     font-size: 1rem;
-    padding: 1.2rem 1.2rem;
+    padding: 1.2rem 2rem;
 }
 .header__nav-ul {
   display: flex;
@@ -425,29 +430,45 @@ margin: 0 0.5rem;
   display: none;
 }
 
+
 .carrito {
-  display: block;
-  cursor: pointer;
+  display: none;
 }
 .contenedor__carrito {
-  width: 40px;
-  margin-left: 5rem;
-  position: relative;
-
+  position: absolute;
+  top: .45rem;
+  right: .7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.55rem .55rem;
+  border-radius: 999px;
+  border: 2px solid aliceblue;
+  background: transparent;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
 }
-.contenedor__carrito:hover{
-    opacity: 0.7;
+.contenedor__carrito:hover {
+  opacity: 0.5;
 }
 
 #count-carrito {
-  font-size: .5;
-  font-family: 'Times New Roman', Times, serif;
-  cursor: pointer;
-  background-color: black;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
   color: aliceblue;
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: static;
+}
+
+.btn-whatsapp-carrito__container {
+  width: 100%;
+  max-width: 20rem;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .h1 {
@@ -758,10 +779,16 @@ padding: 0rem 1rem;
   color: var(--purple-dark);
 }
 
+.btn-whatsapp-carrito__container {
+  position: absolute;
+  display: flex;
+  z-index: 99;
+  width: 100%;
+  background-color: black;
+}
+
 .btn-whatsapp--cart {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   width: 20rem;
   padding: 1rem 1.25rem;
   border-radius: 999px;
@@ -774,7 +801,7 @@ padding: 0rem 1rem;
 
 .btn-whatsapp--cart:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(37, 211, 102, 0.2);
+  opacity: 0.8;
 }
 
 .cart-popup__content {
